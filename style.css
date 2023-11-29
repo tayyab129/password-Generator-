@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    @font-face {
+        font-family: 'SegoeUI_bold_online_security';
+        src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/segoe-ui-bold.woff);
+    }
+}
+
+/* Colors */
+:root {
+    --dk-violet: hsl(268, 75%, 9%);
+    --lt-violet: hsl(268, 47%, 21%);
+    --lt-violet2: hsl(281, 89%, 26%);
+    --vb-violet: hsl(285, 91%, 52%);
+    --vb-violet2: hsl(290, 70%, 36%);
+    --vb-yellow: hsl(52, 100%, 62%);
+    --pl-white: hsl(0, 0%, 100%);
+    --vb-cyan: hsl(176, 100%, 44%);
+    --vb-cyan2: hsl(177, 92%, 70%);
+    --dk-text: hsl(198, 20%, 13%);
+}
+
+
+.back {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom left, rgba(22, 6, 40, 1) 0%, rgba(52, 28, 79, 1) 50%, rgba(88, 7, 125, 1) 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    color: var(--pl-white);
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.display-container {
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid var(--lt-violet2);
+}
+
+
+.display {
+    width: 100%;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--vb-yellow);
+    line-height: 1.2rem;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    padding: 1.15rem 1rem;
+    border: none;
+    outline: none;
+}
+
+.display::placeholder {
+    position: absolute;
+    top: 30%;
+    left: 1.5rem;
+    font-size: 24px;
+    line-height: 18px;
+    color: var(--pl-white);
+    opacity: 0.65;
+}
+
+.copy_btn {
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--vb-cyan);
+}
+
+.copy_btn span {
+    position: absolute;
+    top: -34px;
+    left: -87%;
+    color: var(--vb-yellow);
+    border: 1px solid rebeccapurple;
+    padding: 0.4rem 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--vb-violet2);
+    font-weight: 600;
+    font-size: 15px;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 0.5s;
+}
+
+.copy_btn span.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.display-container button {
+    position: absolute;
+    top: 30%;
+    right: 1.5rem;
+}
+
+
+.input_conatiner {
+    color: white;
+    border-bottom: 0.35rem solid var(--lt-violet2);
+    background-color: var(--dk-violet);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.lenght_conatiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lenght_conatiner p:nth-child(1) {
+    font-size: 1.5rem;
+    color: var(--pl-white);
+}
+
+.lenght_conatiner p:nth-child(2) {
+    font-size: 1.5rem;
+    color: var(--vb-yellow);
+}
+
+.indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--vb-violet);
+    text-align: center;
+    border-radius: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--vb-yellow);
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border: none;
+    border-bottom: 0.35rem solid var(--vb-yellow);
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+    margin: 0.9rem 0;
+}
+
+.check input {
+    appearance: none;
+    border: 1px solid var(--vb-cyan);
+    width: 20px;
+    height: 20px;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.check input:checked {
+    background-color: var(--vb-cyan);
+}
+
+.check input:checked::before {
+    content: '\2713';
+    position: absolute;
+    color: var(--dk-text);
+    font-size: 1.08rem;
+    font-weight: 7 00;
+    left: 20%;
+    top: -3.5px;
+}
+
+.check label {
+    color: var(--pl-white);
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+}
+
+.slider {
+    appearance: none;
+    margin-top: 1.75rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color: var(--lt-violet);
+    background-image: linear-gradient(var(--vb-violet), var(--vb-violet));
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+
+}
+
+.slider::-webkit-slider-thumb {
+    position: relative;
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--vb-yellow);
+    cursor: pointer;
+    margin: -3px;
+    box-shadow: 0px 0px 20px 0px rgb(255, 229, 70, 0.50);
+    transition: all 100ms ease-in;
+}
+
+.slider:focus {
+    outline: 3px solid var(--vb-yellow);
+}
+
+.slider::-webkit-slider-thumb:hover {
+    outline: 1px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgb(255, 229, 70, 0.80);
+
+}
+
+
+
+/* Add media query */
+
+
+@media (max-width: 768px) {
+
+    /* CSS styles for screens with a maximum width of 768px */
+    h1 {
+        font-weight: 600;
+        font-size: 1.7rem;
+        color: var(--vb-yellow);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
